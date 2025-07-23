@@ -36,6 +36,92 @@
             </div>
         </nav>
     </header>
+
+    <!-- desarrollo del contenido principal -->
+
+    <main class="container my-4">
+        <section id="destacados" class="mb-5">
+            <h2 class="text-center mb-4">Imágenes Representativas de Colombia</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagenes/bandera.jpg" class="d-block w-100" alt="Imagen Destacada 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Bandera de Colombia</h5>
+                            <p>Una imagen que ilustra la bandera tricolor.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/condor.jpg" class="d-block w-100" alt="Imagen Destacada 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Condor de los Andes</h5>
+                            <p>Ave representativa de colombia.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/orquidea.jpg" class="d-block w-100" alt="Imagen Destacada 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Flora Colombiana</h5>
+                            <p>Orquidea representativa de Colombia, Unica en su especie.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="categorias">
+            <h2 class="text-center mb-4">Explora la Riqueza Colombiana</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="imagenes/fauna.jpg" class="card-img-top" alt="Naturaleza">
+                        <div class="card-body">
+                            <h5 class="card-title">Fauna y Flora</h5>
+                            <a href="galeria.html?category=naturaleza" class="btn btn-primary">Ver Imagenes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="imagenes/ciudades.jpg" class="card-img-top" alt="Ciudades">
+                        <div class="card-body">
+                            <h5 class="card-title">Nuestra Arquitectura</h5>
+                            <a href="galeria.html?category=ciudades" class="btn btn-primary">Ver ciudades</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="imagenes/artistas.jpg" class="card-img-top" alt="Artistas">
+                        <div class="card-body">
+                            <h5 class="card-title">Artistas y deportistas</h5>
+                            <a href="galeria.html?category=abstracto" class="btn btn-primary">Idolos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- creacion del pie de pagina footer -->
     
 </body>
 </html>
