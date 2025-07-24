@@ -223,3 +223,19 @@ footer {
     background-color: #b3b3b3;
     border-color: #b3b3b3;
 }
+
+/* indicadores */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+}
+
+.carousel-caption {
+    background: rgba(26, 26, 26, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--text-light);
+}
+
+.card-title {
+    color: var(--primary-color);
+}
