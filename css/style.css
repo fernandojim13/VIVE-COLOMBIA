@@ -1,0 +1,99 @@
+
+/* seccion de colores */
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #1a1a1a;
+    --accent-color: #FFD700;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --light-bg: #f8f9fa;
+    --warm-light-bg: #FFF8E1;
+    --soft-yellow: #FFFDD0;
+    --gray-border: #cccccc;
+}
+
+/* Tipografía general del proyecto */
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+/* Tipografía - para titulos del proyecto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: transparent;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Estilo para titulo */
+h1 {
+    font-size: 3.rem; 
+    font-weight: bold; 
+    padding-bottom: 5px; 
+    border-bottom: 2px solid var(--accent-color); 
+    display: inline-block; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Estilo para subtitulos */
+h2 {
+    font-size: 2.rem; 
+    font-weight: 600; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Estilos para contenedores */
+.container {
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(to right, var(--secondary-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+    color: var(--text-light);
+    padding: 1.5rem 0;
+}
+
+header h1 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+/* barra de navegacion */
+.navbar {
+    background: linear-gradient(to left, var(--secondary-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+    font-weight: bold;
+    margin: 0 15px;
+    padding: 10px 0;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    color: var(--accent-color) !important;
+    border-bottom: 2px solid var(--accent-color);
+    transform: translateY(-2px);
+}
