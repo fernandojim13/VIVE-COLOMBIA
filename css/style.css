@@ -97,3 +97,53 @@ header h1 {
     border-bottom: 2px solid var(--accent-color);
     transform: translateY(-2px);
 }
+
+/* contenido del main */
+main {
+    background: linear-gradient(to bottom, var(--warm-light-bg), var(--soft-yellow));
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+footer {
+    background: linear-gradient(to left, var(--secondary-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+    color: var(--text-light);
+    padding: 1rem 0;
+}
+
+/* Estilos para la galeria */
+.image-item {
+    transition: transform 0.2s ease-in-out;
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+}
+
+.image-item .card {
+    border: 1px solid var(--gray-border);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-item .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.image-item .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.image-item .card-text {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
