@@ -42,3 +42,28 @@ function renderImages(filter = 'all') {
     });
 }
 
+ // Función para cargar el detalle de una imagen
+
+    function loadImageDetail() {
+        if (!imagenAmpliada) return; 
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageId = parseInt(urlParams.get('id'));
+        const image = imagesData.find(img => img.id === imageId);
+
+        if (image) {
+            imagenAmpliada.src = image.src;
+            imagenAmpliada.alt = image.title;
+            tituloImagen.textContent = image.title;
+            descripcionImagen.textContent = image.description;
+            autorImagen.textContent = image.author;
+        } else {
+            // Manejar caso donde no se encuentra la imagen
+            tituloImagen.textContent = 'Imagen no encontrada';
+            descripcionImagen.textContent = 'imagen no encontrada.';
+            imagenAmpliada.src = 'https://via.placeholder.com/600x400?text=Imagen+No+Encontrada';
+            autorImagen.textContent = '';
+        }
+    }
+
+    
