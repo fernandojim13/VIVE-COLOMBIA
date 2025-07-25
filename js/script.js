@@ -109,3 +109,66 @@ if (galeriaImagenesSection) {
     }
 }
 
+// detalle de imagen
+
+if (imagenAmpliada && tituloImagen && descripcionImagen && autorImagen) {
+    loadImageDetail();
+}
+
+// formulario de contacto 
+
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('form-message');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        formMessage.innerHTML = '';
+
+        let isValid = true;
+        const nombre = document.getElementById('nombre');
+        const email = document.getElementById('email');
+        const mensaje = document.getElementById('mensaje');
+
+        // Validación de informacion
+
+        if (nombre.value.trim() === '') {
+            nombre.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            nombre.classList.remove('is-invalid');
+        }
+
+        if (email.value.trim() === '' || !email.value.includes('@')) {
+            email.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            email.classList.remove('is-invalid');
+        }
+
+        if (mensaje.value.trim() === '') {
+            mensaje.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            mensaje.classList.remove('is-invalid');
+        }
+
+        if (isValid) {
+
+            // envío de formulario
+
+            setTimeout(() => {
+                formMessage.classList.remove('alert-danger');
+                formMessage.classList.add('alert', 'alert-success');
+                formMessage.textContent = '¡Mensaje enviado con éxito! Te responderemos pronto.';
+                contactForm.reset();
+            }, 500);
+        } else {
+            formMessage.classList.remove('alert-success');
+            formMessage.classList.add('alert', 'alert-danger');
+            formMessage.textContent = 'Por favor, corrige los errores en el formulario.';
+        }
+    });
+}
+
+
