@@ -16,3 +16,30 @@ const imagenAmpliada = document.getElementById('imagen-ampliada');
 const tituloImagen = document.getElementById('titulo-imagen');
 const descripcionImagen = document.getElementById('descripcion-imagen');
 const autorImagen = document.getElementById('autor-imagen');
+
+// Función para renderizar las imágenes en la galería
+
+    function renderImages(filter = 'all') {
+        if (!galeriaImagenesSection) return; 
+
+        galeriaImagenesSection.innerHTML = ''; 
+        const filteredImages = filter === 'all' ? imagesData : imagesData.filter(img => img.category === filter);
+
+        filteredImages.forEach(image => {
+            const colDiv = document.createElement('div');
+            colDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4', 'image-item');
+            colDiv.innerHTML = `
+                <div class="card h-100">
+                    <img src="${image.src}" class="card-img-top" alt="${image.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${image.title}</h5>
+                        <p class="card-text">${image.description.substring(0, 100)}...</p>
+                        <a href="detalle-imagen.html?id=${image.id}" class="btn btn-primary btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+            `;
+            galeriaImagenesSection.appendChild(colDiv);
+        });
+    }
+
+    
