@@ -42,28 +42,69 @@ function renderImages(filter = 'all') {
     });
 }
 
- // Función para cargar el detalle de una imagen
+// Función para cargar el detalle de una imagen
 
-    function loadImageDetail() {
-        if (!imagenAmpliada) return; 
+function loadImageDetail() {
+    if (!imagenAmpliada) return;
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const imageId = parseInt(urlParams.get('id'));
-        const image = imagesData.find(img => img.id === imageId);
+    const urlParams = new URLSearchParams(window.location.search);
+    const imageId = parseInt(urlParams.get('id'));
+    const image = imagesData.find(img => img.id === imageId);
 
-        if (image) {
-            imagenAmpliada.src = image.src;
-            imagenAmpliada.alt = image.title;
-            tituloImagen.textContent = image.title;
-            descripcionImagen.textContent = image.description;
-            autorImagen.textContent = image.author;
-        } else {
-            // Manejar caso donde no se encuentra la imagen
-            tituloImagen.textContent = 'Imagen no encontrada';
-            descripcionImagen.textContent = 'imagen no encontrada.';
-            imagenAmpliada.src = 'https://via.placeholder.com/600x400?text=Imagen+No+Encontrada';
-            autorImagen.textContent = '';
+    if (image) {
+        imagenAmpliada.src = image.src;
+        imagenAmpliada.alt = image.title;
+        tituloImagen.textContent = image.title;
+        descripcionImagen.textContent = image.description;
+        autorImagen.textContent = image.author;
+    } else {
+        // Manejar caso donde no se encuentra la imagen
+        tituloImagen.textContent = 'Imagen no encontrada';
+        descripcionImagen.textContent = 'imagen no encontrada.';
+        imagenAmpliada.src = 'https://via.placeholder.com/600x400?text=Imagen+No+Encontrada';
+        autorImagen.textContent = '';
+    }
+}
+
+// Lógica para la página de la galería
+
+if (galeriaImagenesSection) {
+
+    // Cargar todas las imágenes al inicio
+
+    renderImages('all');
+
+    // Manejar los filtros
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            renderImages(filter);
+        });
+    });
+
+    // Aplicar filtro 
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromUrl = urlParams.get('category');
+    if (categoryFromUrl) {
+        renderImages(categoryFromUrl);
+
+        // Activar el filtro correspondiente
+
+        const activeFilterButton = document.querySelector(`#filtros .btn[data-filter="${categoryFromUrl}"]`);
+        if (activeFilterButton) {
+            activeFilterButton.classList.add('active');
+        }
+    } else {
+
+        // que sean todas
+
+        const allButton = document.querySelector('#filtros .btn[data-filter="all"]');
+        if (allButton) {
+            allButton.classList.add('active');
         }
     }
-
-    
+}
