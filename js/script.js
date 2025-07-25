@@ -19,16 +19,16 @@ const autorImagen = document.getElementById('autor-imagen');
 
 // Función para renderizar las imágenes en la galería
 
-    function renderImages(filter = 'all') {
-        if (!galeriaImagenesSection) return; 
+function renderImages(filter = 'all') {
+    if (!galeriaImagenesSection) return;
 
-        galeriaImagenesSection.innerHTML = ''; 
-        const filteredImages = filter === 'all' ? imagesData : imagesData.filter(img => img.category === filter);
+    galeriaImagenesSection.innerHTML = '';
+    const filteredImages = filter === 'all' ? imagesData : imagesData.filter(img => img.category === filter);
 
-        filteredImages.forEach(image => {
-            const colDiv = document.createElement('div');
-            colDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4', 'image-item');
-            colDiv.innerHTML = `
+    filteredImages.forEach(image => {
+        const colDiv = document.createElement('div');
+        colDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4', 'image-item');
+        colDiv.innerHTML = `
                 <div class="card h-100">
                     <img src="${image.src}" class="card-img-top" alt="${image.title}">
                     <div class="card-body">
@@ -38,8 +38,7 @@ const autorImagen = document.getElementById('autor-imagen');
                     </div>
                 </div>
             `;
-            galeriaImagenesSection.appendChild(colDiv);
-        });
-    }
+        galeriaImagenesSection.appendChild(colDiv);
+    });
+}
 
-    
